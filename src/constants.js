@@ -8,7 +8,12 @@ const fieldType = {
     player: 2,
 }
 
+const eventType = {
+    boom: 0,
+}
+
 export {
     constants,
     fieldType,
+    eventType,
 }
