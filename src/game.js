@@ -11,8 +11,8 @@ export default class Game {
             player_two: new Image(),
             boom: new Image(),
         }
-        const playerOneDirection = this.data.players[0].direction;
-        const playerTwoDirection = this.data.players[1].direction;
+        const playerOneDirection = this.data.players.pacman.direction;
+        const playerTwoDirection = this.data.players.pacman2.direction;
 
         this.image.wall.src = './assets/images/discarded/tile04.png';
         this.image.wall.alt = 'wall';
@@ -29,11 +29,11 @@ export default class Game {
         this.image.boom.src = `./assets/images/events/explosion.png`;
         this.image.boom.alt = 'boom';
 
-        this.playerOneX = this.data.players[0].x;
-        this.playerOneY = this.data.players[0].y;
+        this.playerOneX = this.data.players.pacman.x;
+        this.playerOneY = this.data.players.pacman.y;
 
-        this.playerTwoX = this.data.players[1].x;
-        this.playerTwoY = this.data.players[1].y;
+        this.playerTwoX = this.data.players.pacman2.x;
+        this.playerTwoY = this.data.players.pacman2.y;
     }
 
     render(context) {        
@@ -85,7 +85,6 @@ export default class Game {
     }
 
     animateShoot(context, event) {
-        console.log('shoot');
         sounds.shoot.play();
         let { startX, startY, targetX, targetY } = event;
         startX = startX * constants.squareSide + (constants.squareSide / 2);

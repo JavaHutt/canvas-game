@@ -15,29 +15,23 @@ export default JSONs = [
                 [1, 0, 0, 0, 0, 1, 0, 0, 0, 1],
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
             ],
-            "players": [
-                {
-                    "name": "Alex",
-                    "id": "123",
-                    "x" : 1,
-                    "y" : 4,
-                    "direction": "right"
-                },
-                {
-                    "name": "Ivan",
-                    "id": "456", 
-                    "x" : 4, 
-                    "y" : 4, 
-                    "direction": "left" 
-                }
-            ],
-            "respawns": [
-                {
+            "players": {
+                "pacman": {
+                    "id": "35e802c7-c445-4cd1-9484-5247d0b579b0",
+                    "name": "pacman",
                     "x": 1,
-                    "y": 2,
-                    "kind": "player"
-                }  
-            ],
+                    "y": 1,
+                    "direction": "down"
+                },
+                "pacman2": {
+                    "id": "1fb8bbd6-865f-457b-9e33-6634234fdfc0",
+                    "name": "pacman2",
+                    "x": 8,
+                    "y": 8,
+                    "direction":
+                        "up"
+                }
+            },
             "events": [
                 {
                     "kind": 0,
@@ -73,29 +67,23 @@ export default JSONs = [
                 [1, 0, 0, 0, 0, 1, 0, 0, 0, 1],
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
             ],
-            "players": [
-                {
-                    "name": "Alex",
-                    "id": "123",
-                    "x" : 1,
-                    "y" : 4,
-                    "direction": "right"
-                },
-                {
-                    "name": "Ivan",
-                    "id": "456", 
-                    "x" : 4, 
-                    "y" : 4, 
-                    "direction": "left" 
-                }
-            ],
-            "respawns": [
-                {
+            "players": {
+                "pacman": {
+                    "id": "35e802c7-c445-4cd1-9484-5247d0b579b0",
+                    "name": "pacman",
                     "x": 1,
-                    "y": 2,
-                    "kind": "player"
-                }  
-            ],
+                    "y": 1,
+                    "direction": "down"
+                },
+                "pacman2": {
+                    "id": "1fb8bbd6-865f-457b-9e33-6634234fdfc0",
+                    "name": "pacman2",
+                    "x": 8,
+                    "y": 8,
+                    "direction":
+                        "up"
+                }
+            },
             "events": [
                 {
                     "kind": 0,
@@ -130,30 +118,23 @@ export default JSONs = [
                 [1, 0, 0, 0, 0, 1, 0, 0, 0, 1],
                 [1, 0, 0, 0, 0, 1, 0, 0, 0, 1],
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-            ],
-            "players": [
-                {
-                    "name": "Alex",
-                    "id": "123",
-                    "x" : 1,
-                    "y" : 4,
-                    "direction": "right"
-                },
-                {
-                    "name": "Ivan",
-                    "id": "456", 
-                    "x" : 4, 
-                    "y" : 4, 
-                    "direction": "left" 
-                }
-            ],
-            "respawns": [
-                {
+            ], "players": {
+                "pacman": {
+                    "id": "35e802c7-c445-4cd1-9484-5247d0b579b0",
+                    "name": "pacman",
                     "x": 1,
-                    "y": 2,
-                    "kind": "player"
-                }  
-            ],
+                    "y": 1,
+                    "direction": "down"
+                },
+                "pacman2": {
+                    "id": "1fb8bbd6-865f-457b-9e33-6634234fdfc0",
+                    "name": "pacman2",
+                    "x": 8,
+                    "y": 8,
+                    "direction":
+                        "up"
+                }
+            },
             "events": [
                 {
                     "kind": 0,
@@ -163,4 +144,4 @@ export default JSONs = [
             ]
         }
     }
-] 
+]
