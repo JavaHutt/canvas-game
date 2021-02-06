@@ -10,6 +10,7 @@ const fieldType = {
 
 const eventType = {
     boom: 0,
+    shoot: 1,
 }
 
 export {

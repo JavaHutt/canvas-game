@@ -55,6 +55,9 @@ export default class Game {
                         case eventType.boom: {
                             this.animateBoom(context, event.x, event.y);
                         }
+                        case eventType.shoot: {
+                            this.animateShoot(context, event);
+                        }
                     }
                 });
             }
@@ -78,16 +81,30 @@ export default class Game {
         }
     }
 
+    animateShoot(context, event) {
+        let { startX, startY, targetX, targetY } = event;
+        startX = startX * constants.squareSide + (constants.squareSide / 2);
+        startY = startY * constants.squareSide + (constants.squareSide / 2);
+        targetX = targetX * constants.squareSide;
+        targetY = targetY * constants.squareSide  + (constants.squareSide / 2);
+        context.beginPath();
+        context.moveTo(startX, startY);
+        context.lineTo(targetX, targetY);
+        context.lineWidth = 5;
+        context.strokeStyle = 'crimson';
+        context.stroke();
+    }
+
     animateBoom(context, boomX, boomY) {
         let frame = 0;
-        setInterval(() => {
+        const interval = setInterval(() => {
             this.makeBoom(context, boomX, boomY, frame);
             frame += 80;
-            if (frame === 560) {
-                frame = 0;
-                this.restore(context, boomX, boomY);
-            }
         }, 200);
+        if (frame === 560) {
+            clearInterval(interval)
+            this.restore(context, boomX, boomY);
+        }
     }
 
     restore(context, boomX, boomY) {
@@ -98,8 +115,7 @@ export default class Game {
 
     drawShip(context) {
         context.drawImage(this.image.player_one, this.playerOneX * constants.squareSide, this.playerOneY * constants.squareSide, constants.squareSide, constants.squareSide);
-        context.drawImage(this.image.player_two, this.playerTwoX * constants.squareSide, this.playerTwoY * constants.squareSide, constants.squareSide, constants.squareSide);
-      
+        context.drawImage(this.image.player_two, this.playerTwoX * constants.squareSide, this.playerTwoY * constants.squareSide, constants.squareSide, constants.squareSide);      
     }
 
     makeBoom(context, x, y, sx) {
