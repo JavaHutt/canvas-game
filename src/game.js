@@ -1,4 +1,5 @@
 import { constants, fieldType, eventType } from './constants';
+import sounds from './sound';
 
 export default class Game {
     constructor(data) {
@@ -54,9 +55,11 @@ export default class Game {
                     switch (event.kind) {
                         case eventType.boom: {
                             this.animateBoom(context, event.x, event.y);
+                            break;
                         }
                         case eventType.shoot: {
                             this.animateShoot(context, event);
+                            break;
                         }
                     }
                 });
@@ -82,6 +85,8 @@ export default class Game {
     }
 
     animateShoot(context, event) {
+        console.log('shoot');
+        sounds.shoot.play();
         let { startX, startY, targetX, targetY } = event;
         startX = startX * constants.squareSide + (constants.squareSide / 2);
         startY = startY * constants.squareSide + (constants.squareSide / 2);
@@ -96,6 +101,7 @@ export default class Game {
     }
 
     animateBoom(context, boomX, boomY) {
+        sounds.explosion.play();
         let frame = 0;
         const interval = setInterval(() => {
             this.makeBoom(context, boomX, boomY, frame);
