@@ -6,12 +6,14 @@
   "author": "Alex Karle",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack && webpack serve",
     "build": "webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.12.15",
     "@babel/preset-env": "^7.12.13",
+    "@babel/runtime": "^7.12.13",
     "babel-loader": "^8.2.2",
     "webpack": "^5.20.2",
     "webpack-cli": "^4.5.0",
